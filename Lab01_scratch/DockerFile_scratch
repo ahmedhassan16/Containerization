@@ -1,0 +1,3 @@
+FROM scratch
+ADD scratch/src /
+CMD ["/hello"]

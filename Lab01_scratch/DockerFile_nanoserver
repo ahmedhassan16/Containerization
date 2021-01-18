@@ -1,0 +1,5 @@
+FROM mcr.microsoft.com/windows/nanoserver:2004-amd64
+ADD windows/nanoserver_src /
+#CMD echo hello.txt
+
+CMD type hello.txt
