@@ -1,5 +1,7 @@
-﻿#Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+#Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 #netstat -a -b
+
+#Check https://github.com/Sitecore/docker-examples/tree/develop/getting-started
 .\init.ps1 -LicenseXmlPath "D:\DKR\docker-examples-develop\getting-started\license.xml"
 
 #mkcert -install
