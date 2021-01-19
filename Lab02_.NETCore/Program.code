@@ -1,0 +1,30 @@
+﻿using System;
+using System.IO;
+
+namespace NetCore.Docker
+{
+    class Program
+    {
+        static string logFilePath = @"c:\data\log.txt";
+        static string dataFilePath = @"c:\data\output.txt";
+        static void Main(string[] args)
+        {
+            log("--------------------------------");
+            log("Application Start");
+            log("Hello World!");            
+            Console.WriteLine(File.ReadAllText(dataFilePath));
+
+            while(true){
+                Console.WriteLine("Please enter content to append:");
+                string input = Console.ReadLine();
+                File.AppendAllText(dataFilePath, Environment.NewLine + input);
+            }
+        }
+
+        static void log(string message)
+        {
+            Console.WriteLine($"{DateTime.Now}: {message}");
+            File.AppendAllText(logFilePath, $"\r\n{DateTime.Now}: {message}" );
+        }
+    }
+}
