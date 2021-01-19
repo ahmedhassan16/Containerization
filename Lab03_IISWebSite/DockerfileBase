@@ -1,2 +1,0 @@
-FROM mcr.microsoft.com/windows/servercore/iis:windowsservercore-2004
-WORKDIR /inetpub/wwwroot
