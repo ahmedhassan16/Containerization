@@ -1,5 +1,4 @@
 FROM mcr.microsoft.com/powershell:lts-nanoserver-2004
 ADD windows/powershell_src /
-#CMD echo hello.txt
 
 CMD pwsh -command "Get-Content hello.txt"
