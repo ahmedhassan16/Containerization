@@ -1,0 +1,4 @@
+FROM alpine
+ADD linux/alpine_src /
+
+CMD cat hello.txt

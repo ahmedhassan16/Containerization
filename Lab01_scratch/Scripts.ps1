@@ -2,17 +2,17 @@
 
 #Switch to Linux Containers
 #docker images
-#docker build -f DockerFile_scratch -t scratch_image:10 .
-docker build --file DockerFile_scratch --tag scratch_image:10 .
-docker build --file DockerFile_linux_alpine --tag alpine_image:10 .
+#docker build -f DockerFile.01_scratch -t scratch_image:10 .
+docker build --file DockerFile.01_scratch --tag scratch_image:10 .
+docker build --file DockerFile.02_linux_alpine --tag alpine_image:10 .
 
 #Switch to Windows Containers
 #https://docs.microsoft.com/en-us/virtualization/windowscontainers/deploy-containers/version-compatibility?tabs=windows-server-2004%2Cwindows-10-20H2
 docker pull mcr.microsoft.com/windows/nanoserver:2004-amd64
 docker pull mcr.microsoft.com/powershell:lts-nanoserver-2004
 
-docker build --file DockerFile_nanoserver --tag nanoserver_image:11 .
-docker build --file DockerFile_powershell --tag powershell_image:10 .
+docker build --file DockerFile.03_nanoserver --tag nanoserver_image:11 .
+docker build --file DockerFile.04_powershell --tag powershell_image:10 .
 
 ########## docker rmi scratch_image:10
 ########## docker rmi alpine_image:10
