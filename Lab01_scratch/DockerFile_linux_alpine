@@ -1,3 +1,0 @@
-FROM alpine
-ADD linux/alpine_src /
-CMD echo hello.txt
