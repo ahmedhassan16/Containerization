@@ -1,6 +1,6 @@
 #dotnet --list-sdks
 dotnet new console --output App --framework net5.0 --name NetCore.Docker
-dotnet run --project .\App\
+#dotnet run --project .\App\             #You have to create c:\data\log.txt & data.txt files
 dotnet publish .\App\ -c Release
 
 
