@@ -1,15 +1,16 @@
 #Set-ExecutionPolicy Unrestricted
-docker pull mcr.microsoft.com/dotnet/aspnet:3.1
-#https://docs.microsoft.com/en-us/virtualization/windowscontainers/deploy-containers/version-compatibility?tabs=windows-server-2004%2Cwindows-10-20H2
-docker pull mcr.microsoft.com/windows/nanoserver:2004-amd64
-docker pull mcr.microsoft.com/powershell:lts-nanoserver-2004
 
 #Switch to Linux Containers
 #docker images
 #docker build -f DockerFile_scratch -t scratch_image:10 .
 docker build --file DockerFile_scratch --tag scratch_image:10 .
 docker build --file DockerFile_linux_alpine --tag alpine_image:10 .
+
 #Switch to Windows Containers
+#https://docs.microsoft.com/en-us/virtualization/windowscontainers/deploy-containers/version-compatibility?tabs=windows-server-2004%2Cwindows-10-20H2
+docker pull mcr.microsoft.com/windows/nanoserver:2004-amd64
+docker pull mcr.microsoft.com/powershell:lts-nanoserver-2004
+
 docker build --file DockerFile_nanoserver --tag nanoserver_image:11 .
 docker build --file DockerFile_powershell --tag powershell_image:10 .
 
