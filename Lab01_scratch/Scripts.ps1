@@ -31,12 +31,13 @@ docker run --name powershell_container powershell_image:10
 docker start -a -i alpine_container
 docker start -a -i nanoserver_container
 docker start -a -i powershell_container
-docker stop nanoserver_container
 
 docker run -it --name alpine_container alpine_image:10 /bin/sh
 docker run -it --name nanoserver_container nanoserver_image:11 cmd
 docker run -it --name powershell_container powershell_image:10 pwsh
 docker run -it --name powershell_container powershell_image:10 pwsh "start.ps1"
+
+docker stop nanoserver_container
 
 ########## docker rm hello_container
 ########## docker rm alpine_container
