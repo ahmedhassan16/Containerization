@@ -1,17 +1,17 @@
-﻿using System;
+using System;
 using System.IO;
 
 namespace NetCore.Docker
 {
     class Program
     {
-        static string logFilePath = @"c:\data\log.txt";
-        static string dataFilePath = @"c:\data\output.txt";
+        static string logFilePath = @"data\log.txt";
+        static string dataFilePath = @"data\output.txt";
         static void Main(string[] args)
         {
             log("--------------------------------");
             log("Application Start");
-            log("Hello World!");            
+            log("Hello World!");
             Console.WriteLine(File.ReadAllText(dataFilePath));
 
             while(true){
@@ -23,6 +23,10 @@ namespace NetCore.Docker
 
         static void log(string message)
         {
+            if(!File.Exists(dataFilePath)){
+                Directory.CreateDirectory(@"data");
+                File.AppendAllText(dataFilePath, "Sample Data" );
+            }
             Console.WriteLine($"{DateTime.Now}: {message}");
             File.AppendAllText(logFilePath, $"\r\n{DateTime.Now}: {message}" );
         }
